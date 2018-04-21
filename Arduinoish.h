@@ -31,10 +31,16 @@ void toggle(Pin pin);
 
 int analogRead(Pin pin);
 
-void analogWrite(char port, int bit);
+void analogWrite(Pin pin, int analog_value);
 
 void delay(volatile unsigned int time_del);
 
 void delay_micro(volatile unsigned int time_del);
+
+void attachInterrupts(Pin pin, void (*ISR)(void), int priority);
+
+void noInterrupts(void);
+
+void interrupts(void);
 
 #endif
